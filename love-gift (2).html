@@ -40,17 +40,8 @@ body {
     transition: opacity 0.4s ease;
 }
 
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 10;
-}
+.hidden { opacity: 0; pointer-events: none; z-index: -1; }
+.active { opacity: 1; pointer-events: auto; z-index: 10; }
 
 /* ========== LOCK SCREEN ========== */
 #lock-screen {
@@ -65,15 +56,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;
     padding: 30px 20px 20px;
     width: 100%;
     text-align: center;
 }
 
 .profile-img {
-    width: 150px;
-    height: 180px;
+    width: 250px;
+    height: 330px;
     object-fit: cover;
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(233,30,99,0.3);
@@ -146,7 +136,6 @@ body {
     font-size: 0.72rem;
     color: rgba(100,0,40,0.6);
     margin-bottom: 18px;
-    text-align: center;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -268,8 +257,7 @@ body {
     background: #e91e63;
     color: white;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border-radius: 50%;
     font-size: 1rem;
     cursor: pointer;
@@ -286,7 +274,7 @@ body {
     z-index: 10;
 }
 
-/* MUSIC */
+/* ========== MUSIC ========== */
 .modal-header {
     display: flex;
     justify-content: center;
@@ -298,10 +286,7 @@ body {
     margin-bottom: 14px;
     position: relative;
 }
-.modal-header .close-btn {
-    position: absolute;
-    right: 0;
-}
+.modal-header .close-btn { position: absolute; right: 0; }
 
 .music-body {
     display: flex;
@@ -310,10 +295,8 @@ body {
     width: 100%;
 }
 
-/* Album art - square photo like reference */
 .album-art {
-    width: 160px;
-    height: 160px;
+    width: 160px; height: 160px;
     border-radius: 18px;
     position: relative;
     background: linear-gradient(135deg, #ff8fab, #e91e63);
@@ -327,11 +310,7 @@ body {
     flex-shrink: 0;
     transition: box-shadow 0.3s;
 }
-.album-art img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.album-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .album-art.playing {
     box-shadow: 0 12px 40px rgba(233,30,99,0.55);
     animation: albumPulse 2s ease-in-out infinite;
@@ -362,12 +341,8 @@ body {
     margin-bottom: 14px;
     margin-top: 10px;
 }
-.progress-bar .time {
-    font-size: 0.68rem;
-    color: #e91e63;
-    min-width: 30px;
-    font-weight: 600;
-}
+.progress-bar .time { font-size: 0.68rem; color: #e91e63; min-width: 30px; font-weight: 600; }
+
 .slider {
     flex: 1;
     -webkit-appearance: none;
@@ -399,6 +374,7 @@ body {
     transition: color 0.2s, transform 0.15s;
 }
 .ctrl-btn:active { transform: scale(0.88); color: #e91e63; }
+
 .play-btn {
     background: linear-gradient(135deg, #f06292, #e91e63);
     color: white; border: none;
@@ -413,7 +389,6 @@ body {
 }
 .play-btn:active { transform: scale(0.92); }
 
-/* Playlist like reference - thumbnail + title */
 .playlist {
     width: 100%;
     display: flex;
@@ -451,20 +426,12 @@ body {
     display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem;
 }
-.track-thumb img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-}
+.track-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 .track-info { flex: 1; min-width: 0; }
-.track-name {
-    font-size: 0.82rem; color: #c2185b; font-weight: 700;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.track-sub {
-    font-size: 0.68rem; color: #e91e63; opacity: 0.65;
-    margin-top: 2px;
-}
+.track-name { font-size: 0.82rem; color: #c2185b; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.track-sub { font-size: 0.68rem; color: #e91e63; opacity: 0.65; margin-top: 2px; }
+
 .track-playing-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -478,22 +445,21 @@ body {
 
 .empty-playlist { text-align: center; padding: 16px; font-size: 0.78rem; color: #e91e63; opacity: 0.6; }
 
-/* LETTER */
+/* ========== LETTER ========== */
 .letter-body { padding-top: 18px; color: #880e4f; line-height: 1.75; }
 .letter-body h2 { font-size: 1.1rem; margin-bottom: 14px; color: #c2185b; font-family: Georgia, serif; }
 .letter-body p { margin-bottom: 12px; font-size: 0.87rem; }
 
-/* GALLERY */
+/* ========== GALLERY ========== */
 .gallery-header {
     text-align: center; color: #e91e63; font-weight: 800;
     margin-bottom: 12px; font-size: 0.95rem; letter-spacing: 2px;
 }
 
-/* Scroll strip */
 .gallery-scroll-wrap {
     overflow: hidden;
     width: 100%;
-    height: 380px;
+    height: 460px;
     position: relative;
     border-radius: 16px;
 }
@@ -506,31 +472,17 @@ body {
     height: 100%;
 }
 
-/* Two columns side by side */
 .gallery-col {
     display: flex;
     flex-direction: column;
     gap: 8px;
     flex: 1;
+    will-change: transform;
 }
-
-.gallery-col.col-up   { animation: scrollUp   18s linear infinite; }
-.gallery-col.col-down { animation: scrollDown 18s linear infinite; }
-
-@keyframes scrollUp {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-}
-@keyframes scrollDown {
-    0%   { transform: translateY(-50%); }
-    100% { transform: translateY(0); }
-}
-
-.gallery-col:hover { animation-play-state: paused; }
 
 .gallery-item {
     width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
@@ -539,21 +491,8 @@ body {
     transition: transform 0.2s;
     box-shadow: 0 4px 12px rgba(233,30,99,0.2);
 }
-
 .gallery-item:active { transform: scale(0.96); }
-
-.gallery-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-}
-
-.gallery-item .placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem;
-}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
 
 /* Lightbox */
 .lightbox {
@@ -569,13 +508,9 @@ body {
     transition: opacity 0.3s;
     border-radius: 28px;
 }
-.lightbox.show {
-    opacity: 1;
-    pointer-events: auto;
-}
+.lightbox.show { opacity: 1; pointer-events: auto; }
 .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 90%; max-height: 80%;
     border-radius: 16px;
     object-fit: contain;
     animation: zoomIn 0.3s ease;
@@ -589,8 +524,7 @@ body {
     position: absolute;
     top: 16px; right: 16px;
     background: #e91e63;
-    color: white;
-    border: none;
+    color: white; border: none;
     width: 36px; height: 36px;
     border-radius: 50%;
     font-size: 1.1rem;
@@ -599,8 +533,9 @@ body {
     font-weight: 700;
 }
 
-/* GIFT */
+/* ========== GIFT ========== */
 #gift-modal { background: #050510 !important; }
+
 .dark-close {
     background: rgba(255,255,255,0.15);
     position: absolute; top: 16px; right: 16px; z-index: 200;
@@ -608,12 +543,14 @@ body {
     color: white; font-size: 1rem; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
 }
+
 .gift-scene {
     width: 100%; height: 100%;
     position: relative;
     display: flex; justify-content: center; align-items: flex-end;
     padding-bottom: 60px; overflow: hidden;
 }
+
 .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 .star-dot { position: absolute; background: white; border-radius: 50%; animation: twinkle 3s ease-in-out infinite; }
 @keyframes twinkle { 0%,100%{opacity:0.1;transform:scale(0.8)} 50%{opacity:1;transform:scale(1)} }
@@ -651,7 +588,7 @@ body {
     <!-- ===== LOCK SCREEN ===== -->
     <section id="lock-screen" class="screen active">
         <div class="lock-wrapper">
-            <img src="profile.jpg" alt="Profile" class="profile-img"
+            <img src="images/profile.jpg" alt="Profile" class="profile-img"
                  onerror="this.outerHTML='<div class=\'profile-placeholder\'>🌸</div>'">
             <div class="lock-heart">💗</div>
             <div class="lock-title">Nhập mã để mở quà 💝</div>
@@ -709,10 +646,8 @@ body {
                 <button class="close-btn" onclick="closeModal('music-modal')">✕</button>
             </div>
             <div class="music-body">
-                <!-- Album art - shows cover.jpg or emoji fallback -->
                 <div class="album-art" id="album-art">
-                    <img src="music/cover.jpg" alt="cover"
-                         onerror="this.style.display='none'">
+                    <img src="music/cover.jpg" alt="cover" onerror="this.style.display='none'">
                     <span id="album-emoji" style="position:absolute;">🎶</span>
                 </div>
                 <div class="song-title" id="song-title">Chưa có bài nào</div>
@@ -739,12 +674,10 @@ body {
         <div class="modal-content glass-effect">
             <button class="close-btn absolute-right" onclick="closeModal('letter-modal')">✕</button>
             <div class="letter-body">
-                <h2>Gửi người con gái anh yêu,</h2>
-                <p>Chúc em một ngày 8/3 thật ý nghĩa và tràn đầy niềm vui. Cảm ơn em đã luôn đồng hành và mang lại hơi ấm cho trái tim anh.</p>
-                <p>Mỗi khoảnh khắc bên em đều là một kỷ niệm đáng trân trọng. Nụ cười của em, ánh mắt của em — tất cả đều khiến anh yêu đời hơn mỗi ngày.</p>
-                <p>Dù ngày mai có thế nào, anh vẫn sẽ luôn ở đây bên em, yêu em hơn hôm qua và ít hơn ngày mai 💕</p>
-                <p>Chúc em mãi xinh đẹp, hạnh phúc và tỏa sáng như em vẫn luôn là ✨</p>
-                <p style="margin-top:20px;font-weight:700;font-size:1rem;">Mãi yêu em ❤️<br>— Người ấy</p>
+                <h2>Send to my fen,</h2>
+                <p>Chúc tụi mày một ngày 8/3 thật ý nghĩa và tràn đầy niềm vui.</p>
+                <p>Chúc tụi mày luôn xinh đẹp, hạnh phúc, sớm lấy chồng 😄</p>
+                <p style="margin-top:20px;font-weight:700;font-size:1rem;">Rồi Nào Nhậu ? <br>— Thái Quốc & Đăng Khoa</p>
             </div>
         </div>
     </div>
@@ -754,16 +687,12 @@ body {
         <div class="modal-content glass-effect" style="padding:16px;">
             <button class="close-btn absolute-right" onclick="closeModal('gallery-modal')">✕</button>
             <div class="gallery-header">💕 HAPPY WOMEN'S DAY 💕</div>
-
             <div class="gallery-scroll-wrap">
-                <!-- Column 1: scroll UP -->
                 <div class="gallery-track">
-                    <div class="gallery-col col-up" id="col-left"></div>
-                    <div class="gallery-col col-down" id="col-right"></div>
+                    <div class="gallery-col" id="col-left"></div>
+                    <div class="gallery-col" id="col-right"></div>
                 </div>
             </div>
-
-            <!-- Lightbox -->
             <div class="lightbox" id="lightbox" onclick="closeLightbox()">
                 <button class="lightbox-close" onclick="closeLightbox()">✕</button>
                 <img id="lightbox-img" src="" alt="">
@@ -778,9 +707,9 @@ body {
             <div class="stars" id="stars"></div>
             <img src="flower.gif" alt="Flower" class="flower-img"
                  onerror="this.outerHTML='<div class=\'flower-emoji\'>🌹</div>'">
-            <div class="chat-bubble c1 hidden">Anh yêu em 💗</div>
-            <div class="chat-bubble c2 hidden">My heart belongs to you 🌸</div>
-            <div class="chat-bubble c3 hidden">Always with you 💕</div>
+            <div class="chat-bubble c1 hidden">1 1 1</div>
+            <div class="chat-bubble c2 hidden">2 2 2</div>
+            <div class="chat-bubble c3 hidden">3 z</div>
         </div>
     </div>
 
@@ -788,11 +717,11 @@ body {
 
 <script>
 // ============ PASSCODE ============
-const CORRECT_PASS = "0803";
+const CORRECT_PASS = "1802";
 let currentPass = "";
 const dots = document.querySelectorAll('.dot');
 const lockScreen = document.getElementById('lock-screen');
-const mainMenu  = document.getElementById('main-menu');
+const mainMenu   = document.getElementById('main-menu');
 
 document.querySelectorAll('.num-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -845,6 +774,7 @@ function openModal(id) {
     const m = document.getElementById(id);
     m.classList.replace('hidden', 'active');
     if (id === 'gift-modal') runGiftAnimation();
+    if (id === 'gallery-modal') startGalleryScroll();
 }
 
 function closeModal(id) {
@@ -852,22 +782,17 @@ function closeModal(id) {
 }
 
 // ============ MUSIC PLAYER ============
-// -------------------------------------------------------
-// Cấu hình playlist - thêm file mp3 vào folder "music/"
-// rồi khai báo vào đây:
-// { name: "Tên bài", file: "music/ten-file.mp3", cover: "music/cover1.jpg" }
-// -------------------------------------------------------
+// Thêm file mp3 vào folder "music/" rồi khai báo vào đây
 const PLAYLIST = [
-    { name: "Hôn Lễ Của Em",        file: "music/hon-le-cua-em.mp3",       cover: "music/cover1.jpg" },
-    { name: "Ai Ngoài Anh",          file: "music/ai-ngoai-anh.mp3",         cover: "music/cover2.jpg" },
-    { name: "Lỡ Say Bye Là Bye",     file: "music/lo-say-bye-la-bye.mp3",    cover: "music/cover3.jpg" },
-    { name: "Nơi Này Có Anh",        file: "music/2.mp3",       cover: "music/cover4.jpg" },
-    { name: "Thế giới mất đi 1 người cô đơn ",     file: "music/1.mp3",    cover: "music/cover5.jpg" },
+    { name: "Hôn Lễ Của Em",                       file: "music/hon-le-cua-em.mp3",       cover: "music/cover1.jpg" },
+    { name: "Ai Ngoài Anh",                         file: "music/ai-ngoai-anh.mp3",         cover: "music/cover2.jpg" },
+    { name: "Lỡ Say Bye Là Bye",                    file: "music/lo-say-bye-la-bye.mp3",    cover: "music/cover3.jpg" },
+    { name: "Nơi Này Có Anh",                       file: "music/2.mp3",                    cover: "music/cover4.jpg" },
 ];
 
 let songs = PLAYLIST.map(p => ({ ...p }));
 let currentIdx = -1, isPlaying = false;
-const audioEl = document.getElementById("bg-music");
+const audioEl    = document.getElementById("bg-music");
 const albumArtEl = document.getElementById("album-art");
 
 audioEl.addEventListener("timeupdate", () => {
@@ -892,13 +817,12 @@ function fmt(s) {
 
 function renderPlaylist() {
     const pl = document.getElementById("playlist");
-    if (!songs.length) { pl.innerHTML = "<div class=\"empty-playlist\">Không có bài hát 🎵</div>"; return; }
+    if (!songs.length) { pl.innerHTML = '<div class="empty-playlist">Không có bài hát 🎵</div>'; return; }
     pl.innerHTML = songs.map((s, i) => {
         const active = i === currentIdx;
         return `<div class="playlist-item ${active ? "active-track" : ""}" onclick="playSong(${i})">
             <div class="track-thumb">
                 <img src="${s.cover}" alt="" onerror="this.style.display='none'">
-                ${active && isPlaying ? "" : ""}
             </div>
             <div class="track-info">
                 <div class="track-name">${s.name}</div>
@@ -910,14 +834,14 @@ function renderPlaylist() {
 }
 
 function updateAlbumArt(song) {
-    const img = albumArtEl.querySelector("img");
+    const img   = albumArtEl.querySelector("img");
     const emoji = document.getElementById("album-emoji");
     if (img) {
         img.style.display = "block";
         img.src = song.cover;
         img.onerror = function() { this.style.display = "none"; };
     }
-    if (emoji) emoji.style.display = img && img.src ? "none" : "block";
+    if (emoji) emoji.style.display = "none";
 }
 
 function playSong(idx) {
@@ -966,7 +890,6 @@ function prevTrack() {
     playSong((currentIdx - 1 + songs.length) % songs.length);
 }
 
-// Init playlist on load
 renderPlaylist();
 
 // ============ GIFT ============
@@ -979,10 +902,19 @@ renderPlaylist();
         s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;
         c.appendChild(s);
     }
-
 })();
 
-// ============ GALLERY (global scope) ============
+function runGiftAnimation() {
+    const bubbles = document.querySelectorAll('.chat-bubble');
+    bubbles.forEach(b => { b.classList.add('hidden'); b.style.opacity=0; b.style.transform='translateY(20px)'; });
+    [600, 1600, 2600].forEach((t, i) => setTimeout(() => {
+        bubbles[i].classList.remove('hidden');
+        bubbles[i].style.opacity = 1;
+        bubbles[i].style.transform = 'translateY(0)';
+    }, t));
+}
+
+// ============ GALLERY ============
 const GRADIENTS = [
     'linear-gradient(135deg,#ff8fab,#e91e63)',
     'linear-gradient(135deg,#e91e63,#c2185b)',
@@ -996,12 +928,21 @@ const GRADIENTS = [
     'linear-gradient(135deg,#ff8fab,#880e4f)',
 ];
 
-// Danh sách ảnh - thêm src ảnh thật vào đây
+// Thêm ảnh vào folder "images/" rồi khai báo vào đây
 const PHOTOS = [
-    {src:'photo1.jpg'}, {src:'photo2.jpg'}, {src:'photo3.jpg'},
-    {src:'photo4.jpg'}, {src:'photo5.jpg'}, {src:'photo6.jpg'},
-    {src:'photo7.jpg'}, {src:'photo8.jpg'}, {src:'photo9.jpg'}, {src:'photo10.jpg'}
+    { src: "images/photo1.jpg" },
+    { src: "images/photo2.jpg" },
+    { src: "images/photo3.jpg" },
+    { src: "images/photo4.jpg" },
+    { src: "images/photo5.jpg" },
+    { src: "images/photo6.jpg" },
+    { src: "images/photo7.jpg" },
+    { src: "images/photo8.jpg" },
+    { src: "images/photo9.jpg" },
+    { src: "images/photo10.jpg" },
 ];
+
+let galleryStarted = false;
 
 function buildGallery() {
     const colLeft  = document.getElementById('col-left');
@@ -1016,11 +957,9 @@ function buildGallery() {
     function makeItem(src, gradient) {
         const div = document.createElement('div');
         div.className = 'gallery-item';
-        // Show gradient immediately as background, show img on top if loads
         div.style.background = gradient;
         const img = document.createElement('img');
-        img.src = src;
-        img.alt = 'photo';
+        img.src = src; img.alt = 'photo';
         img.onerror = function() { this.style.display = 'none'; };
         div.appendChild(img);
         div.addEventListener('click', () => openLightbox(src, gradient));
@@ -1028,8 +967,8 @@ function buildGallery() {
     }
 
     function fillCol(col, photos, startIdx) {
-        // Duplicate 3x for smooth infinite scroll
-        for (let r = 0; r < 3; r++) {
+        // 4 lần để scroll vô tận không bao giờ hết ảnh
+        for (let r = 0; r < 4; r++) {
             photos.forEach((p, i) => {
                 col.appendChild(makeItem(p.src, GRADIENTS[(startIdx + i) % GRADIENTS.length]));
             });
@@ -1040,6 +979,47 @@ function buildGallery() {
     fillCol(colRight, rightPhotos, 1);
 }
 
+function startGalleryScroll() {
+    if (galleryStarted) return;
+    galleryStarted = true;
+    buildGallery();
+
+    const colLeft  = document.getElementById('col-left');
+    const colRight = document.getElementById('col-right');
+
+    const SPEED = 0.6; // px/frame — tăng để nhanh hơn
+    let posLeft = 0, posRight = 0;
+    let pauseLeft = false, pauseRight = false;
+
+    colLeft.addEventListener('mouseenter',  () => pauseLeft  = true);
+    colLeft.addEventListener('mouseleave',  () => pauseLeft  = false);
+    colRight.addEventListener('mouseenter', () => pauseRight = true);
+    colRight.addEventListener('mouseleave', () => pauseRight = false);
+
+    // Cột phải bắt đầu lệch pha để trông tự nhiên
+    posRight = colRight.scrollHeight / 4;
+
+    function loop() {
+        // Cột trái: cuộn lên
+        if (!pauseLeft) {
+            posLeft += SPEED;
+            const half = colLeft.scrollHeight / 2;
+            if (posLeft >= half) posLeft -= half; // teleport không giật
+            colLeft.style.transform = `translateY(-${posLeft}px)`;
+        }
+        // Cột phải: cuộn lên (lệch pha)
+        if (!pauseRight) {
+            posRight += SPEED;
+            const half = colRight.scrollHeight / 2;
+            if (posRight >= half) posRight -= half;
+            colRight.style.transform = `translateY(-${posRight}px)`;
+        }
+        requestAnimationFrame(loop);
+    }
+
+    requestAnimationFrame(loop);
+}
+
 function openLightbox(src, gradient) {
     const lb  = document.getElementById('lightbox');
     const img = document.getElementById('lightbox-img');
@@ -1047,28 +1027,12 @@ function openLightbox(src, gradient) {
     img.style.display = 'block';
     img.style.background = gradient;
     img.src = src;
-    img.onerror = function() {
-        this.style.display = 'none';
-        // Show gradient swatch instead
-        lb.style.background = gradient;
-    };
+    img.onerror = function() { this.style.display = 'none'; lb.style.background = gradient; };
     lb.classList.add('show');
 }
 
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('show');
-}
-
-buildGallery();
-
-function runGiftAnimation() {
-    const bubbles = document.querySelectorAll('.chat-bubble');
-    bubbles.forEach(b => { b.classList.add('hidden'); b.style.opacity=0; b.style.transform='translateY(20px)'; });
-    [600, 1600, 2600].forEach((t, i) => setTimeout(() => {
-        bubbles[i].classList.remove('hidden');
-        bubbles[i].style.opacity = 1;
-        bubbles[i].style.transform = 'translateY(0)';
-    }, t));
 }
 </script>
 </body>
