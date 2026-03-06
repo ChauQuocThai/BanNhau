@@ -991,11 +991,14 @@ function startGalleryScroll() {
     let posLeft = 0, posRight = 0;
     let pauseLeft = false, pauseRight = false;
 
-  // Desktop hover pause (không ảnh hưởng mobile)
-    colLeft.addEventListener('pointerenter',  e => { if (e.pointerType === 'mouse') pauseLeft  = true;  });
-    colLeft.addEventListener('pointerleave',  e => { if (e.pointerType === 'mouse') pauseLeft  = false; });
-    colRight.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') pauseRight = true;  });
-    colRight.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') pauseRight = false; });
+  // Chỉ pause khi hover trên desktop, mobile thì bỏ qua hoàn toàn
+    const isTouch = navigator.maxTouchPoints > 0;
+    if (!isTouch) {
+        colLeft.addEventListener('mouseenter',  () => pauseLeft  = true);
+        colLeft.addEventListener('mouseleave',  () => pauseLeft  = false);
+        colRight.addEventListener('mouseenter', () => pauseRight = true);
+        colRight.addEventListener('mouseleave', () => pauseRight = false);
+    }
 
     // Cột phải bắt đầu lệch pha để trông tự nhiên
     posRight = colRight.scrollHeight / 4;
