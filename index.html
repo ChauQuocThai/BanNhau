@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
     <title>Quà Tặng 8/3 💝</title>
     <style>
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+
 }
 
 body {
@@ -453,7 +455,7 @@ body {
 /* ========== GALLERY ========== */
 .gallery-header {
     text-align: center; color: #e91e63; font-weight: 800;
-    margin-bottom: 12px; font-size: 0.95rem; letter-spacing: 2px;
+    margin-bottom: 12px; font-size: 0.80rem; letter-spacing: 2px;
 }
 
 .gallery-scroll-wrap {
@@ -617,7 +619,7 @@ body {
 
     <!-- ===== MAIN MENU ===== -->
     <section id="main-menu" class="screen hidden">
-        <div class="menu-greeting">🌸 Chúc mừng 8/3 em yêu 🌸</div>
+        <div class="menu-greeting">🌸 Chúc mừng 8/3 nha các bợn 🌸</div>
         <div class="menu-grid">
             <div class="menu-item" onclick="openModal('music-modal')">
                 <div class="icon-box">🎵</div>
@@ -709,7 +711,7 @@ body {
                  onerror="this.outerHTML='<div class=\'flower-emoji\'>🌹</div>'">
             <div class="chat-bubble c1 hidden">1 1 1</div>
             <div class="chat-bubble c2 hidden">2 2 2</div>
-            <div class="chat-bubble c3 hidden">3 z</div>
+            <div class="chat-bubble c3 hidden">3 zoooooooooooo</div>
         </div>
     </div>
 
@@ -717,6 +719,15 @@ body {
 
 <script>
 // ============ PASSCODE ============
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('*').forEach(el => {
+        el.childNodes.forEach(node => {
+            if (node.nodeType === 3) {
+                node.textContent = node.textContent.normalize('NFC');
+            }
+        });
+    });
+});
 const CORRECT_PASS = "1802";
 let currentPass = "";
 const dots = document.querySelectorAll('.dot');
@@ -987,7 +998,7 @@ function startGalleryScroll() {
     const colLeft  = document.getElementById('col-left');
     const colRight = document.getElementById('col-right');
 
-    const SPEED = 0.6; // px/frame — tăng để nhanh hơn
+    const SPEED = 1; // px/frame — tăng để nhanh hơn
     let posLeft = 0, posRight = 0;
     let pauseLeft = false, pauseRight = false;
 
